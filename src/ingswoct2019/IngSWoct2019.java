@@ -15,7 +15,13 @@ public class IngSWoct2019 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Fibonacci f1 = new Fibonacci(10); //Instanciamos la clase Fibonacci.Enviamos como parametro un numero entero
+        f1.mostrarSerie();//Llamamos a la funcion Mostrar de la clase Fibonacci
+        
+        Fibonacci f2 = new Fibonacci();
+        f2.setTamaño(10);
+        f2.mostrarSerie();
+        
     }
     
 }
