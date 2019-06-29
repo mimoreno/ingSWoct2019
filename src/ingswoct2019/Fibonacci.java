@@ -8,10 +8,39 @@ package ingswoct2019;
  *
  * @author 
  */
+import java.io.*;
 public class Fibonacci {
+    File Ffichero=new File("C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/ingSWoct2019/Fibonacci.txt");/*C:\Users\ediso\OneDrive\Documentos\NetBeansProjects\ingSWoct2019*/
+        /*EcribirFichero(Ffichero,"Juan");
+        EcribirFichero(Ffichero,"Ana");
+        EcribirFichero(Ffichero,"Pedro");
+        ModificarFichero(Ffichero,"Pedro","Maria");
+        LeerFichero(Ffichero);
+        EliminarRegistro(Ffichero,"Juan");
+        LeerFichero(Ffichero);*/
     
     public int tamaño;
         
+    public static void EcribirFichero(File Ffichero,String SCadena){
+        try {
+                //Si no Existe el fichero lo crea
+                if(!Ffichero.exists()){
+                     Ffichero.createNewFile();
+                }
+               //Abre un Flujo de escritura,sobre el fichero con codificacion utf-8. Ademas   en
+               //el pedazo de sentencia "FileOutputStream(Ffichero,true)", true es por si existe el fichero
+               //segir añadiendo texto y no borrar lo que tenia 
+                BufferedWriter Fescribe=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Ffichero,true), "utf-8"));
+                //Escribe en el fichero la cardena que recibe la funcion. la cadena "\r\n" significa salto de linea
+                Fescribe.write(SCadena + "\r");
+                //Cierra el flujo de escritura
+                Fescribe.close();
+            } catch (Exception ex) {
+               //Captura un posible error y le imprime en pantalla 
+               System.out.println(ex.getMessage());
+            }
+        
+    }
     public Fibonacci( int tamaño){
         
         this.tamaño = tamaño;
@@ -23,11 +52,14 @@ public class Fibonacci {
 
     
     public void mostrarSerie(){
-        System.out.println(" Sucesion de tamaño "+this.tamaño+":");
+        System.out.println(" Sucesion de tamaño "+this.tamaño+"=> ");
+        EcribirFichero(Ffichero," Sucesion de tamaño "+this.tamaño+"=> ");
         for (int i = 0; i < tamaño; i++) {
             System.out.print(fibonacci(i)+" ");
+            EcribirFichero(Ffichero,fibonacci(i)+" ");
         }
-        System.out.println();
+        EcribirFichero(Ffichero,"\n");
+        System.out.println("\n");
     }
     
     
