@@ -10,15 +10,7 @@ package ingswoct2019;
  */
 import java.io.*;
 public class Fibonacci {
-    File Ffichero=new File("C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/ingSWoct2019/Fibonacci.txt");/*C:\Users\ediso\OneDrive\Documentos\NetBeansProjects\ingSWoct2019*/
-        /*EcribirFichero(Ffichero,"Juan");
-        EcribirFichero(Ffichero,"Ana");
-        EcribirFichero(Ffichero,"Pedro");
-        ModificarFichero(Ffichero,"Pedro","Maria");
-        LeerFichero(Ffichero);
-        EliminarRegistro(Ffichero,"Juan");
-        LeerFichero(Ffichero);*/
-    
+    File Ffichero=new File("C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/ingSWoct2019/src/Fibonacci.txt");
     public int tamaño;
         
     public static void EcribirFichero(File Ffichero,String SCadena){
@@ -59,7 +51,7 @@ public class Fibonacci {
             EcribirFichero(Ffichero,fibonacci(i)+" ");
         }
         EcribirFichero(Ffichero,"\n");
-        System.out.println("\n");
+        
     }
     
     
