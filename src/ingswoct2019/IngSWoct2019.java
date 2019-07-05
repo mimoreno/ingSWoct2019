@@ -5,6 +5,8 @@
  */
 package ingswoct2019;
 
+import java.util.Scanner;
+
 /**
  *
  * @author 
@@ -15,13 +17,13 @@ public class IngSWoct2019 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Fibonacci f1 = new Fibonacci(10); //Instanciamos la clase Fibonacci.Enviamos como parametro un numero entero
+        String tamaño;
+        System.out.print("Ingrese el tamaño de la serie \n");
+        Scanner teclado = new Scanner(System.in);
+        tamaño = teclado.nextLine();
+        Fibonacci f1 = new Fibonacci(tamaño); //Instanciamos la clase Fibonacci.
         f1.mostrarSerie();//Llamamos a la funcion Mostrar de la clase Fibonacci
-        
-        Fibonacci f2 = new Fibonacci();
-        f2.setTamaño(10);
-        f2.mostrarSerie();
-        
+                
     }
     
 }

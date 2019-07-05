@@ -11,7 +11,7 @@ package ingswoct2019;
 import java.io.*;
 public class Fibonacci {
     File Ffichero=new File("C:/Users/ediso/OneDrive/Documentos/NetBeansProjects/ingSWoct2019/Fibonacci.txt");
-    public int tamaño;
+    public String tamaño;
         
     public static void EcribirFichero(File Ffichero,String SCadena){
         try {
@@ -21,7 +21,7 @@ public class Fibonacci {
                 }
                //Abre un Flujo de escritura,sobre el fichero con codificacion utf-8. Ademas   en
                //el pedazo de sentencia "FileOutputStream(Ffichero,true)", true es por si existe el fichero
-               //segir añadiendo texto y no borrar lo que tenia 
+               //seguir añadiendo texto y no borrar lo que tenia 
                 BufferedWriter Fescribe=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Ffichero,true), "utf-8"));
                 //Escribe en el fichero la cardena que recibe la funcion. la cadena "\r\n" significa salto de linea
                 Fescribe.write(SCadena + "\r");
@@ -33,7 +33,7 @@ public class Fibonacci {
             }
         
     }
-    public Fibonacci( int tamaño){
+    public Fibonacci( String tamaño){
         
         this.tamaño = tamaño;
     }
@@ -44,13 +44,15 @@ public class Fibonacci {
 
     
     public void mostrarSerie(){
+        
         System.out.println(" Sucesion de tamaño "+this.tamaño+"=> ");
         EcribirFichero(Ffichero," Sucesion de tamaño "+this.tamaño+"=> ");
-        for (int i = 0; i < tamaño; i++) {
+        for (int i = 0; i < Integer.parseInt(tamaño); i++) {
             System.out.print(fibonacci(i)+" ");
             EcribirFichero(Ffichero,fibonacci(i)+" ");
         }
         EcribirFichero(Ffichero,"\n");
+        System.out.print(" \n");
         
     }
     
@@ -72,11 +74,11 @@ public class Fibonacci {
         }
     }
     
-       public int getTamaño() {
+       public String getTamaño() {
         return tamaño;
     }
 
-    public void setTamaño(int tamaño) {
+    public void setTamaño(String tamaño) {
         this.tamaño = tamaño;
     }
         
